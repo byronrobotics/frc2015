@@ -6,7 +6,7 @@ import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 /**
- *
+ *Court
  */
 public class ExampleSubsystem extends Subsystem {
     
@@ -33,8 +33,8 @@ public class ExampleSubsystem extends Subsystem {
 		
 	}
 	public void reverse(){
-		motor.set(-1.0);
-		motor2.set(-1.0);
+		motor.set(SmartDashboard.getNumber("MotorSpeed",-1.0));
+		motor2.set(SmartDashboard.getNumber("MotorSpeed",-1.0));
 	}
     public void initDefaultCommand() {
         // Set the default command for a subsystem here.
@@ -43,3 +43,4 @@ public class ExampleSubsystem extends Subsystem {
     
 }
 
+																																																																							

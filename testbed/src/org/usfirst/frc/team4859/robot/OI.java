@@ -1,17 +1,19 @@
 package org.usfirst.frc.team4859.robot;
 
 import edu.wpi.first.wpilibj.Joystick;
+
 import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
-import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+//import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 import org.usfirst.frc.team4859.robot.commands.In;
-import org.usfirst.frc.team4859.robot.commands.MotorOff;
-import org.usfirst.frc.team4859.robot.commands.MotorOn;
-import org.usfirst.frc.team4859.robot.commands.MotorReverse;
+//import org.usfirst.frc.team4859.robot.commands.MotorOff;
+//import org.usfirst.frc.team4859.robot.commands.MotorOn;
+//import org.usfirst.frc.team4859.robot.commands.MotorReverse;
 import org.usfirst.frc.team4859.robot.commands.Out;
 
 /**
+ * Court
  * This class is the glue that binds the controls on the physical operator
  * interface to the commands and command groups that allow control of the robot.
  */
@@ -21,12 +23,13 @@ public class OI {
     // You create one by telling it which joystick it's on and which button
     // number it is.
 	//TESTING A CHANGE FROM ECLIPSE!!
-    Joystick stick = new Joystick(0);
-    Button motorOn = new JoystickButton(stick, 1);
-    Button motorOff = new JoystickButton(stick, 2);
-    Button motorReverse = new JoystickButton(stick,3);
-    Button in = new JoystickButton(stick,11);
-    Button out = new JoystickButton(stick,12);
+    Joystick left = new Joystick(0);
+    Joystick right = new Joystick(1);
+    //Button motorOn = new JoystickButton(left, 1);
+    //Button motorOff = new JoystickButton(left, 2);
+    //Button motorReverse = new JoystickButton(left,3);
+    Button in = new JoystickButton(left,11);
+    Button out = new JoystickButton(left,12);
     
     
     //Solenoid piston1extract = new Solenoid(1);
@@ -36,9 +39,9 @@ public class OI {
    
    
     public OI(){
-    	motorOn.whenPressed(new MotorOn());
-        motorOff.whenPressed(new MotorOff());
-        motorReverse.whenPressed(new MotorReverse());
+    	//motorOn.whenPressed(new MotorOn());
+        //motorOff.whenPressed(new MotorOff());
+        //motorReverse.whenPressed(new MotorReverse());
         in.whenPressed(new In());
         out.whenPressed(new Out());
         //piston1extract.whenPressed(new Piston1Extract());
@@ -66,5 +69,13 @@ public class OI {
     // Start the command when the button is released  and let it run the command
     // until it is finished as determined by it's isFinished method.
     // button.whenReleased(new ExampleCommand());
+    public Joystick getLeftJoystick ()
+    {
+    	return left;
+    }
+    public Joystick getRightJoystick ()
+    {
+    	return right;
+    }
 }
 

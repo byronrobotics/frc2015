@@ -7,10 +7,12 @@ import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 
 import org.usfirst.frc.team4859.robot.commands.ExampleCommand;
+import org.usfirst.frc.team4859.robot.subsystems.Chassis;
 import org.usfirst.frc.team4859.robot.subsystems.ExampleSubsystem;
 import org.usfirst.frc.team4859.robot.subsystems.Yes;
 
 /**
+ * Court
  * The VM is configured to automatically run this class, and to call the
  * functions corresponding to each mode, as described in the IterativeRobot
  * documentation. If you change the name of this class or the package after
@@ -21,7 +23,7 @@ public class Robot extends IterativeRobot {
 
 	public static final ExampleSubsystem exampleSubsystem = new ExampleSubsystem();
 	public static final Yes yes = new Yes();
-	
+	public static Chassis chassis = new Chassis();
 	public static OI oi;
 
     Command autonomousCommand;
@@ -31,7 +33,9 @@ public class Robot extends IterativeRobot {
      * used for any initialization code.
      */
     public void robotInit() {
-		oi = new OI();
+		chassis = new Chassis();
+    	oi = new OI();
+    	
 		//Compressor.start();
         // instantiate the command used for the autonomous period
         autonomousCommand = new ExampleCommand();
